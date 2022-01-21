@@ -1,6 +1,10 @@
 # epochconverter
 
-A new Flutter project.
+Epoch converter is a simple and easy Unix Timestamp to human readable form converter.
+
+# Screenshort
+![EpochReadable](https://user-images.githubusercontent.com/43641536/150603866-347c020a-8513-4d62-bb59-33d2bf8fefb2.gif)
+
 
 ## Getting Started
 
