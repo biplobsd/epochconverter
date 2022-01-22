@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -67,17 +68,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    FittedBox(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).hoverColor,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            epochCnv,
-                            style: Theme.of(context).textTheme.headline3,
-                          ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * .9,
+                      padding: const EdgeInsets.all(12.0),
+                      margin: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).hoverColor,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: FittedBox(
+                        child: Text(
+                          epochCnv,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.headline3,
                         ),
                       ),
                     ),
