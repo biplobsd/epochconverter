@@ -27,12 +27,15 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  DateTime get mainDateTime {
+    return DateTime.fromMillisecondsSinceEpoch(int.parse(userInput.text));
+  }
+
   String get epochCnv {
     if (userInput.text.isEmpty) {
       userInput.text = '1642811640';
     }
-    return DateFormat(formatTimeString)
-        .format(DateTime.fromMillisecondsSinceEpoch(int.parse(userInput.text)));
+    return DateFormat(formatTimeString).format(mainDateTime);
   }
 
   void _dateTimePiced(BuildContext ctx) {
@@ -158,7 +161,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                     .millisecondsSinceEpoch
                                     .toString();
                               });
-                              ;
                             },
                             icon: const Icon(Icons.update),
                           ),
@@ -189,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 20,
                 ),
                 ChangeFormat(
-                  timeStamp: userInput.text,
+                  timeStamp: mainDateTime,
                   changeTimePattern: changeTimeFormat,
                   nowTimePattern: formatTimeString,
                 ),

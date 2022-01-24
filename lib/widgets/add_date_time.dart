@@ -52,10 +52,10 @@ class _SMMPickerState extends State<SMMPicker> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .35,
+      height: 320,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           FittedBox(
             child: Text(
@@ -63,7 +63,9 @@ class _SMMPickerState extends State<SMMPicker> {
               style: Theme.of(context).textTheme.headline6,
             ),
           ),
-          const Spacer(),
+          const SizedBox(
+            height: 30,
+          ),
           TextField(
               onChanged: (value) => changeString(),
               controller: sc,
@@ -85,7 +87,9 @@ class _SMMPickerState extends State<SMMPicker> {
               controller: mc,
               decoration: const InputDecoration(
                   label: Text("Microsecond "), border: OutlineInputBorder())),
-          const Spacer(),
+          const SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
