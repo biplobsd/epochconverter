@@ -11,13 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Epoch Readable',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Epoch Readable'),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.green,
+      // ),
+      home: MyHomePage(title: 'Epoch Readable'),
     );
   }
 }

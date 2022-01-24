@@ -35,7 +35,12 @@ class _ChangeFormatState extends State<ChangeFormat> {
   ];
 
   void changePNow([String? e]) {
-    widget.changeTimePattern(e ?? timeStringContoler.text);
+    // print(e);
+    // print(timeStringContoler.text);
+    if (e != null) {
+      timeStringContoler.text = e;
+    }
+    widget.changeTimePattern(timeStringContoler.text);
   }
 
   @override
@@ -54,7 +59,7 @@ class _ChangeFormatState extends State<ChangeFormat> {
         children: [
           Text(
             "Change Format",
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.caption,
           ),
           const SizedBox(
             height: 10,
@@ -82,7 +87,9 @@ class _ChangeFormatState extends State<ChangeFormat> {
                   child: TextButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                            const Color.fromRGBO(150, 230, 255, .6))),
+                            Theme.of(context)
+                                .primaryColorLight
+                                .withAlpha(200))),
                     onPressed: () {
                       changePNow(e);
                     },
