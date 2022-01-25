@@ -60,43 +60,58 @@ class Examples extends StatelessWidget {
       decoration: BoxDecoration(
           color: Theme.of(context).hoverColor,
           borderRadius: BorderRadius.circular(10)),
-      height: MediaQuery.of(context).size.height * .56,
+      height: MediaQuery.of(context).size.height * .6,
       padding: const EdgeInsets.all(15),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                padding: const EdgeInsets.all(2),
-                alignment: Alignment.center,
-                width: 55,
-                child: FittedBox(
-                  child: Text(
-                    "Skeleton".toUpperCase(),
-                    style: Theme.of(context).textTheme.overline,
+              Expanded(
+                flex: 1,
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  alignment: Alignment.center,
+                  // width: 55,
+                  child: FittedBox(
+                    child: Text(
+                      "Skeleton".toUpperCase(),
+                      style: Theme.of(context).textTheme.overline,
+                    ),
                   ),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.all(2),
-                alignment: Alignment.center,
+              const SizedBox(
+                width: 8,
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  alignment: Alignment.center,
+                  // width: 50,
+                  child: FittedBox(
+                    child: Text(
+                      "Example".toUpperCase(),
+                      style: Theme.of(context).textTheme.overline,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
                 width: 50,
-                child: FittedBox(
-                  child: Text(
-                    "Example".toUpperCase(),
-                    style: Theme.of(context).textTheme.overline,
-                  ),
-                ),
               ),
-              Container(
-                padding: const EdgeInsets.all(2),
-                alignment: Alignment.centerRight,
-                width: 200,
-                child: FittedBox(
-                  child: Text(
-                    "ICU Name".toUpperCase(),
-                    style: Theme.of(context).textTheme.overline,
+              Expanded(
+                flex: 2,
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  alignment: Alignment.centerRight,
+                  // width: 100,
+                  child: FittedBox(
+                    child: Text(
+                      "ICU Name".toUpperCase(),
+                      style: Theme.of(context).textTheme.overline,
+                    ),
                   ),
                 ),
               ),
@@ -120,51 +135,65 @@ class Examples extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: TextButton(
-                      onPressed: (() => _backPattern(e[0])),
+                      onPressed: () => _backPattern(e[0]),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            padding: const EdgeInsets.all(2),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                color: Theme.of(context).hoverColor,
-                                borderRadius: BorderRadius.circular(3)),
-                            width: 50,
-                            child: FittedBox(
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              padding: const EdgeInsets.all(2),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context).hoverColor,
+                                  borderRadius: BorderRadius.circular(3)),
+                              child: FittedBox(
                                 child: Text(
-                              e[0],
-                              style: Theme.of(context).textTheme.bodySmall,
-                            )),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(2),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                color: Theme.of(context).hoverColor,
-                                borderRadius: BorderRadius.circular(3)),
-                            width: 50,
-                            child: FittedBox(
-                              child: Text(
-                                DateFormat(e[0]).format(mainDateTime),
-                                style: Theme.of(context).textTheme.bodySmall,
+                                  e[0],
+                                  style: Theme.of(context).textTheme.bodySmall,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(2),
-                            alignment: Alignment.centerRight,
-                            // decoration: BoxDecoration(
-                            //     color: Theme.of(context).hoverColor,
-                            //     borderRadius: BorderRadius.circular(3)),
-                            width: 200,
-                            child: FittedBox(
-                              child: Text(
-                                e[1].toUpperCase(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(fontWeight: FontWeight.bold),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              padding: const EdgeInsets.all(2),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context).hoverColor,
+                                  borderRadius: BorderRadius.circular(3)),
+                              // width: 50,
+                              child: FittedBox(
+                                child: Text(
+                                  DateFormat(e[0]).format(mainDateTime),
+                                  style: Theme.of(context).textTheme.bodySmall,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              alignment: Alignment.centerRight,
+                              // decoration: BoxDecoration(
+                              //     color: Theme.of(context).hoverColor,
+                              //     borderRadius: BorderRadius.circular(3)),
+                              // width: 100,
+                              child: FittedBox(
+                                child: Text(
+                                  e[1].toUpperCase(),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
